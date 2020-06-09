@@ -1,0 +1,688 @@
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #090a0f;
+  position: relative;
+  padding-bottom: 78px;
+}
+
+/*no top padding for the main page*/
+body:not(#index) {
+  padding-top: 80px;
+}
+
+/*text edit for second header*/
+h2 {
+  margin-top: 50px;
+  font-size: 4vw;
+  color: #2fb9f3;
+  font-family: "Unica One";
+  text-align: center;
+  letter-spacing: 6px;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 8vw;
+  }
+}
+
+/*properties of the scroll arrow in the main page*/
+#scroll img {
+  background: none;
+  width: 5vw;
+  height: 2vw;
+  transition: 0.5s;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+}
+
+#scroll img:hover {
+  bottom: 20px;
+}
+
+/* the parallex effect image in the main page
+The Url video i took it from: https://www.youtube.com/watch?v=d34GsFz-HkY&t=181s */
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+
+.parallex {
+  background: url("images/mainimg-01.png") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.container1 {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+.parallex1 {
+  background: url("images/parallax.jpg") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 20vw;
+}
+
+/*Navigation bar for desktop*/
+.main_nav img {
+  width: 2vw;
+  height: 5.5vw;
+}
+
+.main_nav img:hover {
+  width: 2.3vw;
+  height: 5.9vw;
+  transition: 0.5s;
+}
+
+.main_nav {
+  display: flex;
+  background-color: rgba(20, 49, 61, 0.9);
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  box-shadow: 10px 48px 45px rgb(0, 0, 0);
+}
+
+
+
+/*position sticky for the main site*/
+#index .main_nav {
+  position: sticky;
+  top: 0;
+}
+
+
+
+
+.main_nav a {
+  color: #ffffff29;
+  font-size: 3.2vw;
+  font-family: "Unica One";
+  text-decoration: none;
+  padding: 0px 5vw;
+  margin: 0 auto;
+  letter-spacing: 4px;
+}
+
+.active {
+  color: rgb(255, 255, 255) !important;
+}
+
+.main_nav a:hover {
+  font-size: 3.9vw;
+  color: rgb(255, 255, 255);
+  transition: all 0.5s ease-in-out;
+}
+
+
+/*change padding to smaller size to fit on screen*/
+@media (max-width: 900px) {
+  .main_nav a {
+    transition: 1s;
+    padding: 10px 3vw;
+  }
+}
+
+
+/*hide the hamburger menu when desktop size*/
+#navigation {
+  display: none;
+}
+
+/*Change the parallex image & add hamburger menu for the phone*/
+@media (max-width: 600px) {
+  .parallex {
+    background: url("images/mainimg-01.png") no-repeat center;
+    background-size: 130%;
+    height: 200px;
+    transition: 1s;
+  }
+
+  /*hide the navigation bar when mobile size*/
+  .main_nav {
+    display: none;
+  }
+
+  #index .main_nav {
+    display: none;
+  }
+
+  /*The hamburger menu
+  The URL video i took it from: https://www.youtube.com/watch?v=AtagkbFtbgQ */
+  #navigation {
+    display: contents;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    background: rgba(20, 49, 61, 0.9);
+    padding: 5px;
+    padding-top: 10px;
+    transition: 0.5s;
+    border-radius: 4px;
+    box-shadow: 10px 30px 40px rgba(0, 0, 0, 0.74);
+  }
+
+  /*position sticky for the main site*/
+  #index #navigation {
+    position: sticky;
+    top: 0;
+  }
+
+  .menu {
+    margin: 0;
+    padding: 0 0 10px;
+    width: 100%;
+    max-width: 100%;
+    transition: 0.5s;
+    justify-content: space-evenly;
+    transform: translateX(-600px);
+    transition: 0.4s ease-in-out;
+    border-right: 1px rgb(238, 238, 238);
+  }
+
+  #navigation input:checked~.menu {
+    transform: translateX(0);
+  }
+
+  .menu a {
+    text-decoration: none;
+    color: #ccc;
+    margin: 10px 4px;
+    transition: 0.5s;
+    font-family: "Unica One";
+    font-size: 3vw;
+    /* letter-spacing: 2px; */
+    padding: 0 0.5vw;
+    border-right: 1px rgb(238, 238, 238);
+    transition: 0.5s ease-in-out;
+  }
+
+  .menu a:hover {
+    color: rgb(238, 238, 238);
+    font-size: 3.5vw;
+  }
+
+  @media (max-width: 600px) {
+    .menu a {
+      font-size: 3.5vw;
+    }
+
+    .menu a:hover {
+      font-size: 5.5vw;
+    }
+  }
+
+  input {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  #navigation span {
+    position: absolute;
+    left: 15px;
+    width: 30px;
+    height: 4px;
+    background: #ccc;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+
+  /*add animation to the menu icon when clicked*/
+  #navigation input:checked~span {
+    background: #ccc;
+  }
+
+  #navigation span:nth-child(2) {
+    transform: translateY(-8px);
+  }
+
+  #navigation input:checked~span:nth-child(2) {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  #navigation span:nth-child(3) {
+    transform: translateY(8px);
+  }
+
+  #navigation input:checked~span:nth-child(3) {
+    transform: translateY(0) rotate(-45deg);
+  }
+}
+
+/*Header of pages*/
+.bigtext {
+  margin: 10px;
+  font-size: 6vw;
+  color: #cccccc;
+  font-family: "Unica One";
+  text-align: center;
+  letter-spacing: 6px;
+}
+
+@media (max-width: 600px) {
+  .bigtext {
+    font-size: 10vw;
+  }
+}
+
+/*"click me" text in the About Me section to go to Requirements*/
+.clickme {
+  color: #cccccc;
+}
+
+.clickme:hover {
+  color: rgb(121, 121, 121);
+}
+
+/*the edits for the text in the index site*/
+.flex_container p {
+  margin: 0;
+  padding: 30px;
+  font-size: 2vw;
+  letter-spacing: 0.9px;
+  justify-content: center;
+  color: #cccccc;
+  font-family: "Unica One";
+  line-height: 1.5;
+  text-align: center;
+}
+
+.flex_container ul {
+  font-size: 1.5vw;
+  letter-spacing: 0.9px;
+  color: #cccccc;
+  font-family: "Unica One";
+  line-height: 1.5;
+}
+
+.flex_container ul li a {
+  color: #cccccc;
+}
+
+@media (max-width: 600px) {
+  .flex_container p {
+    font-size: 3.5vw;
+    text-align: left;
+    transition: 0.5s ease-in-out;
+  }
+
+  .flex_container ul {
+    font-size: 3.5vw;
+    transition: 0.5s ease-in-out;
+  }
+}
+
+/*the edits for the text in the other sites*/
+.text {
+  width: 70vw;
+  letter-spacing: 0.9px;
+  line-height: 1.5;
+  margin: 0 auto;
+  padding: 50px;
+  font-size: 3vmin;
+  justify-content: center;
+  color: #cccccc;
+  font-family: "Unica One";
+  text-align: center;
+}
+
+/*the flexbox for the main site elements*/
+.flex_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 30px 0 30px
+}
+
+.box {
+  flex-basis: 800px;
+}
+
+.one {
+  max-width: 800px;
+}
+
+.two {
+  float: right;
+}
+
+.three {
+  max-width: 800px;
+}
+
+.four {
+  float: left;
+}
+
+/* The first transitioning images for the main site*/
+#slider {
+  margin: 0 auto;
+  align-self: center;
+  justify-content: center;
+  max-width: 60vh;
+  height: 30vh;
+  background: url("images/bedroom1.jpg");
+  animation: 20s fade infinite;
+  border: double 3px #ccc;
+  max-width: 60vh;
+  height: 30vh;
+  object-fit: cover;
+  margin: 20px;
+  border-radius: 50%;
+}
+
+@keyframes fade {
+  25% {
+    background: url("images/bedroom1.jpg");
+  }
+
+  50% {
+    background: url("images/livingroom1.jpg");
+  }
+
+  75% {
+    background: url("images/livingroom3.jpg");
+  }
+
+  100% {
+    background: url("images/bedroom3.jpg");
+  }
+}
+
+/* The second transitioning images for the main site*/
+#slider1 {
+  margin: 0 auto;
+  padding: 20px;
+  align-self: center;
+  background: url("images/flyinspace1.jpg");
+  animation: 20s fade1 infinite;
+  border: double 3px #ccc;
+  max-width: 60vh;
+  height: 30vh;
+  object-fit: cover;
+  margin: 20px;
+  border-radius: 50%;
+}
+
+@keyframes fade1 {
+  20% {
+    background: url("images/flyinspace1.jpg");
+  }
+
+  40% {
+    background: url("images/flyinspace3.jpg");
+  }
+
+  60% {
+    background: url("images/flyinspace4.jpg");
+  }
+
+  80% {
+    background: url("images/flyinspace5.jpg");
+  }
+
+  100% {
+    background: url("images/flyinspace6.jpg");
+  }
+}
+
+@media (max-width: 750px) {
+  #slider1 {
+    margin-bottom: 10px;
+    transition: 1s;
+    max-width: 60vh;
+    height: 30vh;
+  }
+}
+
+/*footer edits*/
+footer {
+  width: 100%;
+  background: #05060a;
+  padding-bottom: 20px;
+  position: absolute;
+  bottom: 0;
+  color: #cccccc;
+  font-size: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+}
+
+.tandc {
+  color: rgb(155, 154, 154);
+  font-size: 10px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/*image resize for spaseship site*/
+
+#spaceship main img {
+  max-width: 37vw;
+  height: 27vw;
+  padding: 10px;
+}
+
+
+@media (max-width: 600px) {
+  #spaceship img {
+    max-width: 70vw;
+    height: 50vw;
+    transition: 0.5s ease-in-out;
+  }
+
+  #spaceship img:hover {
+    max-width: 90vw;
+    height: 65vw;
+  }
+}
+
+/*I've placed it again so that it doesn't change the img size of the navigation bar
+I have tried to use the :not(.main_nav img) above but it didn't seem to work*/
+.main_nav img {
+  width: 2vw;
+  height: 5.5vw;
+  padding: 0;
+}
+
+/*The choose button in the spaceship site*/
+.choose {
+  width: 100%;
+  font-size: 3vw;
+  padding: 10px;
+  text-transform: uppercase;
+  border: 2px solid lightgray;
+  border-radius: 15px;
+  text-align: center;
+  color: #cccccc;
+  cursor: pointer;
+  background: #090a0f;
+}
+
+.choose:hover {
+  background: lightgray;
+  color: #090a0f;
+  transition: 0.5s ease-in-out;
+}
+
+/*grid layout for contact*/
+.grid_contact {
+  transition: 0.5s ease-in-out;
+}
+
+@media (min-width: 800px) {
+  .grid_contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 6vw 1fr 1fr;
+  }
+}
+
+/*contact details text-box*/
+.contact {
+  grid-column: 1/2;
+  grid-row: 1/4;
+  max-width: 500px;
+  padding: 30px;
+  margin: 0 auto;
+  color: #cccccc;
+  text-align: center;
+  font-size: 2.5vw;
+  font-family: "Unica One";
+}
+
+.maptext {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  margin: 0 auto;
+}
+
+/*maps img properties*/
+.maps {
+  grid-column: 2/3;
+  grid-row: 2/4;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 45vw;
+  height: 25vw;
+  justify-content: center;
+  transition: 1s;
+}
+
+.maps:hover {
+  width: 60vw;
+  height: 30vw;
+}
+
+/*change size properties for phone*/
+@media (max-width: 800px) {
+  .contact {
+    font-size: 4vw;
+  }
+
+  .maptext {
+    font-size: 5vw;
+  }
+
+  .maps {
+    width: 70vw;
+    height: 35vw;
+    transition: 1s;
+  }
+
+  .maps:hover {
+    width: 85vw;
+    height: 55vw;
+  }
+}
+
+/*img slider in requirements
+taken from: https://codepen.io/davidvdbor/pen/MWWoQMo */
+
+@keyframes slider {
+  0% {
+    left: 0%;
+  }
+
+  20% {
+    left: 0%;
+  }
+
+  25% {
+    left: -100%;
+  }
+
+  45% {
+    left: -100%;
+  }
+
+  50% {
+    left: -200%;
+  }
+
+  70% {
+    left: -200%;
+  }
+
+  75% {
+    left: -300%;
+  }
+
+  95% {
+    left: -300%;
+  }
+
+  100% {
+    left: -400%;
+  }
+}
+
+#slider3 {
+  overflow: hidden;
+  max-width: 45vw;
+  height: 25vw;
+  margin: 0 auto;
+  border-radius: 10%;
+}
+
+#slider3 img {
+  width: 45vw;
+  height: 25vw;
+}
+
+#slider3 figure img {
+  width: 20%;
+  float: left;
+}
+
+#slider3 figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  animation: 20s slider infinite;
+}
+
+@media (max-width: 600px) {
+  #slider3 {
+    max-width: 80vw;
+    height: 40vw;
+  }
+
+  #slider3 img {
+    width: 80vw;
+    height: 40vw;
+  }
+}
